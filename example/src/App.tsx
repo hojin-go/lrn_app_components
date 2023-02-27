@@ -1,18 +1,40 @@
 import * as React from 'react';
 
-import { StyleSheet, View, Text } from 'react-native';
-import { multiply } from 'lrn-app-components';
+import { StyleSheet, View, Button, SafeAreaView } from 'react-native';
+// import { AbstractModal } from 'lrn-app-components';
+import AbstractModal from '../../src/components/AbstractModal';
 
 export default function App() {
-  const [result, setResult] = React.useState<number | undefined>();
+  // @ts-ignore
+  const [visible, setVisible] = React.useState<boolean>(false);
 
-  React.useEffect(() => {
-    multiply(3, 7).then(setResult);
-  }, []);
+  const onClose = () => {
+    setVisible(false);
+  };
 
   return (
     <View style={styles.container}>
-      <Text>Result: {result}</Text>
+      <Button onPress={() => setVisible(true)} title="show Modal" />
+      <AbstractModal
+        visible={visible}
+        onClose={onClose}
+        contentStyle={{
+          backgroundColor: 'white',
+          borderTopLeftRadius: 10,
+          borderTopRightRadius: 10,
+          // clip
+          overflow: 'hidden',
+        }}
+      >
+        <SafeAreaView>
+          <View
+            style={{
+              width: '100%',
+              height: 400,
+            }}
+          />
+        </SafeAreaView>
+      </AbstractModal>
     </View>
   );
 }
