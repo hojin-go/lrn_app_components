@@ -1,9 +1,11 @@
 import * as React from 'react';
 
 import { StyleSheet, View, Text } from 'react-native';
-import AbstractModal from '../../src/components/AbstractModal';
+import { AbstractModal } from 'lrn-app-components';
+// import AbstractModal from '../../src/components/AbstractModal';
 
 export default function App() {
+  // @ts-ignore
   const [result, setResult] = React.useState<number | undefined>();
   const [visible, setVisible] = React.useState<boolean>(true);
 

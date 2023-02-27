@@ -7,15 +7,15 @@ module.exports = {
     //     envName: 'APP_ENV',
     //     moduleName: '@env',
     //     // 读取环境配置参数
-    //     path: '.env',
-    //   },
+    //     path: '.env'
+    //   }
     // ],
     ['react-native-classname-to-style'],
     [
       'react-native-platform-specific-extensions',
       {
-        extensions: ['less'],
-      },
-    ],
-  ],
-};
+        extensions: ['less']
+      }
+    ]
+  ]
+}

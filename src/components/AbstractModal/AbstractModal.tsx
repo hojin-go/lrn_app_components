@@ -15,7 +15,8 @@ import {
 } from 'react-native';
 import Toast from 'react-native-toast-notifications';
 import * as animatable from 'react-native-animatable';
-import styles from './index.module.less';
+// @ts-ignore
+import s from './index.module.less';
 
 type Props = {
   toastRef?: MutableRefObject<Toast>;
@@ -84,9 +85,9 @@ const InnerModalContainer = (props: {
   const { visible, style, children } = props;
 
   return (
-    <View style={styles.abstractModalBackdrop} pointerEvents="box-none">
+    <View style={[{}, s.abstractModalBackdrop]} pointerEvents="box-none">
       <animatable.View
-        style={[styles.abstractModalContent].concat(style)}
+        style={[s.abstractModalContent].concat(style || {})}
         pointerEvents="box-none"
         animation={visible ? 'slideInUp' : 'slideOutDown'}
         duration={250}

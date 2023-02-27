@@ -5,12 +5,13 @@ module.exports = function (api) {
   api.cache(true);
 
   return {
-    presets: ['babel-preset-expo'],
+    presets: ['babel-preset-expo', 'module:metro-react-native-babel-preset'],
+    // presets: ['module:metro-react-native-babel-preset'],
     plugins: [
       [
         'module-resolver',
         {
-          extensions: ['.tsx', '.ts', '.js', '.json'],
+          extensions: ['.tsx', '.ts', '.js', '.json', 'less'],
           alias: {
             // For development, we want to alias the library to the source
             [pak.name]: path.join(__dirname, '..', pak.source),
