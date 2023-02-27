@@ -20,8 +20,6 @@ export default function App() {
         onClose={onClose}
         contentStyle={{
           backgroundColor: 'white',
-          borderTopLeftRadius: 10,
-          borderTopRightRadius: 10,
           // clip
           overflow: 'hidden',
         }}
@@ -30,7 +28,7 @@ export default function App() {
           <View
             style={{
               width: '100%',
-              height: 400,
+              height: 300,
             }}
           />
         </SafeAreaView>

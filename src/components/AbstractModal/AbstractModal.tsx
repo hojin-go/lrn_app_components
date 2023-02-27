@@ -43,7 +43,7 @@ const AbstractModal: FC<Props> = (props: Props) => {
     >
       {avoidKeyboard ? (
         <KeyboardAvoidingView
-          style={contentStyle}
+          style={[styles.abstractModalContent, contentStyle]}
           behavior={Platform.OS === 'ios' ? 'padding' : undefined}
           pointerEvents="box-none"
         >
@@ -51,7 +51,7 @@ const AbstractModal: FC<Props> = (props: Props) => {
           {children}
         </KeyboardAvoidingView>
       ) : (
-        <View style={contentStyle}>
+        <View style={[styles.abstractModalContent, contentStyle]}>
           {toastRef && <Toast ref={toastRef} />}
           {children}
         </View>
