@@ -10,11 +10,9 @@
     "ios": "expo start --ios"
   },
   "dependencies": {
-    "@lrn/lrn-app-components": "../lrn-lrn-app-components-0.0.1-local.0.tgz",
     "@lrn/lrn-base": "^0.0.17",
     "expo": "~47.0.12",
     "expo-status-bar": "~1.4.2",
-    "lrn-app-components": "../lrn-app-components-0.0.1-local.0.tgz",
     "react": "18.1.0",
     "react-dom": "18.1.0",
     "react-native": "0.70.5",

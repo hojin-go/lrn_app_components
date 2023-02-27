@@ -34,15 +34,15 @@ module.exports = {
       acc[name] = path.join(__dirname, 'node_modules', name);
       return acc;
     }, {}),
-    sourceExts: [...defaultConfig.resolver.sourceExts, 'less']
+    sourceExts: [...defaultConfig.resolver.sourceExts, 'less'],
   },
   transformer: {
     getTransformOptions: async () => ({
       transform: {
         experimentalImportSupport: false,
-        inlineRequires: true
-      }
+        inlineRequires: true,
+      },
     }),
-    babelTransformerPath: require.resolve('react-native-less-transformer')
+    babelTransformerPath: require.resolve('react-native-less-transformer'),
   },
-}
+};
