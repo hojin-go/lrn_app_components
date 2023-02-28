@@ -8,7 +8,6 @@ import {
 } from 'react-native';
 import Modal from 'react-native-modal';
 import Toast from 'react-native-toast-notifications';
-// import * as animatable from 'react-native-animatable';
 import styles from './index.module.less';
 
 type Props = {
@@ -37,8 +36,6 @@ const AbstractModal: FC<Props> = (props: Props) => {
       isVisible={visible}
       backdropColor="#000"
       backdropOpacity={0.37}
-      swipeDirection={['down']}
-      useNativeDriver
       onBackdropPress={onClose}
     >
       {avoidKeyboard ? (
