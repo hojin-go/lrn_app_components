@@ -1,39 +1,40 @@
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import * as React from 'react';
 
-import { StyleSheet, View, Button, SafeAreaView } from 'react-native';
+import { StyleSheet, SafeAreaView, ScrollView, Text } from 'react-native';
 // import { AbstractModal } from 'lrn-app-components';
-import AbstractModal from '../../src/components/AbstractModal';
+
+import ListTile from '../../src/components/ListTile';
+import ModalScreen from './Modal';
+
+function HomeScreen({ navigation }) {
+  return (
+    <SafeAreaView style={styles.container}>
+      <ScrollView style={{ flex: 1, width: '100%' }}>
+        <ListTile
+          title={<Text>Modal</Text>}
+          subtitle={<Text>模态组件</Text>}
+          hasBorder
+          onPress={() => {
+            navigation.navigate('Modal');
+          }}
+        />
+      </ScrollView>
+    </SafeAreaView>
+  );
+}
+
+const Stack = createNativeStackNavigator();
 
 export default function App() {
-  // @ts-ignore
-  const [visible, setVisible] = React.useState<boolean>(false);
-
-  const onClose = () => {
-    setVisible(false);
-  };
-
   return (
-    <View style={styles.container}>
-      <Button onPress={() => setVisible(true)} title="show Modal" />
-      <AbstractModal
-        visible={visible}
-        onClose={onClose}
-        contentStyle={{
-          backgroundColor: 'white',
-          // clip
-          overflow: 'hidden',
-        }}
-      >
-        <SafeAreaView>
-          <View
-            style={{
-              width: '100%',
-              height: 300,
-            }}
-          />
-        </SafeAreaView>
-      </AbstractModal>
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="Home">
+        <Stack.Screen name="Home" component={HomeScreen} />
+        <Stack.Screen name="Modal" component={ModalScreen} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 
@@ -42,10 +43,12 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
+    backgroundColor: 'white',
   },
   box: {
     width: 60,
     height: 60,
     marginVertical: 20,
+    color: 'green',
   },
 });
