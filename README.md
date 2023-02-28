@@ -3,15 +3,15 @@
 react native base components
 
 ## features
-[ ] Button & ButtonGroup  
-[x] Modal  
-  [ ] Dialog & Alert  
-  [ ] ActionSheet  
-[ ] Picker  
-[ ] Price  
-[ ] AppBar  
-[ ] ListTile  
-[ ] Form
+- [ ] Button & ButtonGroup  
+- [x] Modal  
+  - [ ] Dialog & Alert  
+  - [ ] ActionSheet  
+- [ ] Picker  
+- [ ] Price  
+- [ ] AppBar  
+- [ ] ListTile  
+- [ ] Form
 
 ## Installation
 
