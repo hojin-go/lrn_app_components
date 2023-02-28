@@ -2,21 +2,25 @@
 
 react native base components
 
+## features
+[ ] Button & ButtonGroup  
+[x] Modal  
+  [ ] Dialog & Alert  
+  [ ] ActionSheet  
+[ ] Picker  
+[ ] Price  
+[ ] AppBar  
+[ ] ListTile  
+[ ] Form
+
 ## Installation
 
 ```sh
-npm install lrn-app-components
+yarn add @lrn/lrn-app-components
 ```
 
 ## Usage
 
-```js
-import { multiply } from 'lrn-app-components';
-
-// ...
-
-const result = await multiply(3, 7);
-```
 
 ## Contributing
 
