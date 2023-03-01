@@ -15,14 +15,14 @@ const RatingBar = ({ rating }: Props) => {
   return (
     <View style={styles.ratingBar}>
       <View style={styles.background}>
-        {Array.from({ length: total }, (_, i) => i + 1).map((item) => (
+        {Array.from({ length: total }, (_, i) => i + 1).map((_item) => (
           <View style={styles.ratingBarItem}>
             <Svg.SmallStarHollow />
           </View>
         ))}
       </View>
       <View style={[styles.front, { width: ratingWidth }]}>
-        {Array.from({ length: total }, (_, i) => i + 1).map((item) => (
+        {Array.from({ length: total }, (_, i) => i + 1).map((_item) => (
           <View style={styles.ratingBarItem}>
             <Svg.SmallStarFilled />
           </View>
