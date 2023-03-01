@@ -45,6 +45,7 @@ const ModalScreen = () => {
         contentStyle={{
           backgroundColor: 'white',
           overflow: 'hidden',
+          width: 300,
         }}
       >
         <SafeAreaView>
