@@ -3,12 +3,14 @@
 react native base components
 
 ## features
-- [ ] Button & ButtonGroup  
+- [x] Button
+- [ ] ButtonGroup  
 - [x] Modal  
   - [ ] 🏃Dialog & Alert  
   - [ ] ActionSheet  
 - [ ] Picker  
 - [ ] Price  
+- [x] RatingBar
 - [ ] AppBar  
 - [ ] ListTile  
 - [ ] Form
