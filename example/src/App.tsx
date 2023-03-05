@@ -7,6 +7,7 @@ import { ToastProvider } from 'react-native-toast-notifications';
 // import { AbstractModal } from 'lrn-app-components';
 
 import ListTile from '../../src/components/ListTile';
+import AppBarScreen from './AppBarScreen';
 import ButtonScreen from './ButtonScreen';
 import EmptyScreen from './EmptyScreen';
 import ModalScreen from './Modal';
@@ -17,6 +18,7 @@ const StackData = [
   { name: 'Button', desc: '按钮组件', component: ButtonScreen },
   { name: 'RatingBar', desc: '评分组件', component: RatingBarScreen },
   { name: 'Empty', desc: '空组件', component: EmptyScreen },
+  { name: 'AppBar', desc: '导航栏组件', component: AppBarScreen },
 ];
 
 type Props = {
