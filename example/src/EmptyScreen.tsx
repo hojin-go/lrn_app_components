@@ -11,7 +11,7 @@ const EmptyScreen = () => {
         console.log('onTap');
         toast.show('已点击');
       }}
-      // icon={<View style={styles.customIcon} />}
+      icon={<View style={styles.customIcon} />}
       text="点击刷新"
       asScreen={true}
     />
@@ -21,13 +21,6 @@ const EmptyScreen = () => {
 export default EmptyScreen;
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#0ff',
-    alignItems: 'center',
-    // justifyContent: 'center',
-    paddingTop: '60%',
-  },
   customIcon: {
     width: 88,
     height: 88,
