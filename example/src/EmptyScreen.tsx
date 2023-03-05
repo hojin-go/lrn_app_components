@@ -11,7 +11,7 @@ const EmptyScreen = () => {
         console.log('onTap');
         toast.show('已点击');
       }}
-      icon={<View style={styles.customIcon} />}
+      // icon={<View style={styles.customIcon} />}
       text="点击刷新"
       asScreen={true}
     />

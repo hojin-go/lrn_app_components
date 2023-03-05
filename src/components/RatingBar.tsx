@@ -15,15 +15,15 @@ const RatingBar = ({ rating }: Props) => {
   return (
     <View style={styles.ratingBar}>
       <View style={styles.background}>
-        {Array.from({ length: total }, (_, i) => i + 1).map((_item) => (
-          <View style={styles.ratingBarItem}>
+        {Array.from({ length: total }, (_, i) => i + 1).map((idx) => (
+          <View style={styles.ratingBarItem} key={idx}>
             <Svg.SmallStarHollow />
           </View>
         ))}
       </View>
       <View style={[styles.front, { width: ratingWidth }]}>
-        {Array.from({ length: total }, (_, i) => i + 1).map((_item) => (
-          <View style={styles.ratingBarItem}>
+        {Array.from({ length: total }, (_, i) => i + 1).map((idx) => (
+          <View style={styles.ratingBarItem} key={idx}>
             <Svg.SmallStarFilled />
           </View>
         ))}
