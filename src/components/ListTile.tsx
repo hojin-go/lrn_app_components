@@ -8,11 +8,13 @@ type Props = {
   trailing?: React.ReactNode;
   onPress?: () => void;
   hasBorder?: boolean;
+  // idx?: number;
 };
 
 const ListTile = (props: Props) => {
   return (
     <TouchableOpacity
+      // key={props.idx}
       onPress={props.onPress}
       style={[
         styles.container,

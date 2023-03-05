@@ -1,8 +1,5 @@
 import { NavigationContainer } from '@react-navigation/native';
-import {
-  createNativeStackNavigator,
-  NativeStackNavigationProp,
-} from '@react-navigation/native-stack';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import * as React from 'react';
 
 import { StyleSheet, SafeAreaView, ScrollView, Text } from 'react-native';
@@ -10,22 +7,26 @@ import { StyleSheet, SafeAreaView, ScrollView, Text } from 'react-native';
 
 import ListTile from '../../src/components/ListTile';
 import ButtonScreen from './ButtonScreen';
+import EmptyScreen from './EmptyScreen';
 import ModalScreen from './Modal';
 import RatingBarScreen from './RatingBar';
 
+const StackData = [
+  { name: 'Modal', desc: '模态组件', component: ModalScreen },
+  { name: 'Button', desc: '按钮组件', component: ButtonScreen },
+  { name: 'RatingBar', desc: '评分组件', component: RatingBarScreen },
+  { name: 'Empty', desc: '空组件', component: EmptyScreen },
+];
+
 type Props = {
-  navigation: NativeStackNavigationProp<{
-    Modal: undefined;
-    RatingBar: undefined;
-    Button: undefined;
-  }>;
+  navigation: any;
 };
 
 const HomeScreen = ({ navigation }: Props) => {
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView style={{ flex: 1, width: '100%' }}>
-        <ListTile
+        {/* <ListTile
           title={<Text>Modal</Text>}
           subtitle={<Text>模态组件</Text>}
           hasBorder
@@ -48,7 +49,20 @@ const HomeScreen = ({ navigation }: Props) => {
           onPress={() => {
             navigation.navigate('RatingBar');
           }}
-        />
+        /> */}
+        {StackData.map((item, index) => {
+          return (
+            <ListTile
+              key={index}
+              title={<Text>{item.name}</Text>}
+              subtitle={<Text>{item.desc}</Text>}
+              hasBorder={index !== StackData.length - 1}
+              onPress={() => {
+                navigation.navigate(item.name);
+              }}
+            />
+          );
+        })}
       </ScrollView>
     </SafeAreaView>
   );
@@ -61,9 +75,15 @@ export default function App() {
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Home">
         <Stack.Screen name="Home" component={HomeScreen} />
-        <Stack.Screen name="Modal" component={ModalScreen} />
-        <Stack.Screen name="RatingBar" component={RatingBarScreen} />
-        <Stack.Screen name="Button" component={ButtonScreen} />
+        {StackData.map((item, index) => {
+          return (
+            <Stack.Screen
+              name={item.name}
+              component={item.component}
+              key={index}
+            />
+          );
+        })}
       </Stack.Navigator>
     </NavigationContainer>
   );

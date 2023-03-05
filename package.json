@@ -153,7 +153,7 @@
     "jetifier": "^2.0.0",
     "metro-config": "^0.72.3",
     "react-native-modal": "^13.0.1",
-    "react-native-svg": "13.8.0",
+    "react-native-svg": "^13.8.0",
     "react-native-toast-notifications": "3.3.1"
   }
 }
