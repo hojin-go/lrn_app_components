@@ -3,6 +3,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import * as React from 'react';
 
 import { StyleSheet, SafeAreaView, ScrollView, Text } from 'react-native';
+import { ToastProvider } from 'react-native-toast-notifications';
 // import { AbstractModal } from 'lrn-app-components';
 
 import ListTile from '../../src/components/ListTile';
@@ -26,30 +27,6 @@ const HomeScreen = ({ navigation }: Props) => {
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView style={{ flex: 1, width: '100%' }}>
-        {/* <ListTile
-          title={<Text>Modal</Text>}
-          subtitle={<Text>模态组件</Text>}
-          hasBorder
-          onPress={() => {
-            navigation.navigate('Modal');
-          }}
-        />
-        <ListTile
-          title={<Text>Button</Text>}
-          subtitle={<Text>按钮组件</Text>}
-          hasBorder
-          onPress={() => {
-            navigation.navigate('Button');
-          }}
-        />
-        <ListTile
-          title={<Text>RatingBar</Text>}
-          subtitle={<Text>评分组件</Text>}
-          hasBorder
-          onPress={() => {
-            navigation.navigate('RatingBar');
-          }}
-        /> */}
         {StackData.map((item, index) => {
           return (
             <ListTile
@@ -72,20 +49,22 @@ const Stack = createNativeStackNavigator();
 
 export default function App() {
   return (
-    <NavigationContainer>
-      <Stack.Navigator initialRouteName="Home">
-        <Stack.Screen name="Home" component={HomeScreen} />
-        {StackData.map((item, index) => {
-          return (
-            <Stack.Screen
-              name={item.name}
-              component={item.component}
-              key={index}
-            />
-          );
-        })}
-      </Stack.Navigator>
-    </NavigationContainer>
+    <ToastProvider placement="bottom" offsetBottom={200} duration={2000}>
+      <NavigationContainer>
+        <Stack.Navigator initialRouteName="Home">
+          <Stack.Screen name="Home" component={HomeScreen} />
+          {StackData.map((item, index) => {
+            return (
+              <Stack.Screen
+                name={item.name}
+                component={item.component}
+                key={index}
+              />
+            );
+          })}
+        </Stack.Navigator>
+      </NavigationContainer>
+    </ToastProvider>
   );
 }
 
