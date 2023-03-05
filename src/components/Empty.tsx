@@ -34,8 +34,7 @@ const styles = StyleSheet.create({
   screen: {
     height: '100%',
     alignItems: 'center',
-    paddingTop: '60%',
-    backgroundColor: 'white',
+    paddingTop: '50%',
   },
   container: {
     flexDirection: 'column',
@@ -43,7 +42,7 @@ const styles = StyleSheet.create({
   },
   text: {
     fontSize: 14,
-    color: 'rgba(0, 0, 0, 0.5)',
+    color: 'rgba(0, 0, 0, 0.3)',
     marginTop: 10,
     textAlign: 'center',
   },
