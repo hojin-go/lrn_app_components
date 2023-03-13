@@ -1,4 +1,4 @@
-import React, { type FC } from 'react';
+import React, { ReactComponentElement, type FC } from 'react';
 import { TouchableOpacity, Text, View } from 'react-native';
 import styles from './index.module.less';
 
@@ -9,7 +9,7 @@ type Props = {
   onClick?: () => void;
   type?: 'ghost' | 'alert';
   bold?: boolean;
-  iconSvg?;
+  iconSvg?: ReactComponentElement<any>;
 };
 
 const Button: FC<Props> = ({
