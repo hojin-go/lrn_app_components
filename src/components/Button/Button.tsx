@@ -1,5 +1,5 @@
 import React, { type FC } from 'react';
-import { TouchableOpacity, Text } from 'react-native';
+import { TouchableOpacity, Text, View } from 'react-native';
 import styles from './index.module.less';
 
 type Props = {
@@ -9,6 +9,7 @@ type Props = {
   onClick?: () => void;
   type?: 'ghost' | 'alert';
   bold?: boolean;
+  iconSvg?;
 };
 
 const Button: FC<Props> = ({
@@ -18,6 +19,7 @@ const Button: FC<Props> = ({
   onClick,
   type,
   bold,
+  iconSvg,
 }: Props) => {
   return (
     <TouchableOpacity
@@ -36,6 +38,7 @@ const Button: FC<Props> = ({
       disabled={disabled}
       onPress={onClick}
     >
+      {iconSvg && <View style={styles.iconwrap}>{iconSvg}</View>}
       <Text
         style={[
           styles.btnText,

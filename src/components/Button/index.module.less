@@ -6,9 +6,18 @@
   justify-content: center;
   padding: 8px;
 
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
   &.blocked {
     width: 100%;
   }
+}
+
+.iconwrap {
+  margin-right: 8px;
 }
 
 .disabled {
@@ -22,12 +31,12 @@
 
 .alert {
   background-color: white;
-  border: 1px solid #FA243C;
+  border: 1px solid #fa243c;
 }
 
 .alertDisabled {
-  background-color: #FAFAFB;
-  border: 1px solid #E6E8EB
+  background-color: #fafafb;
+  border: 1px solid #e6e8eb;
 }
 
 .btnText {
@@ -42,13 +51,13 @@
 }
 
 .alertText {
-  color: #FA243C;
+  color: #fa243c;
   font-weight: bold;
   font-size: 17px;
 }
 
 .alertTextDisabled {
-  color: #0000004D;
+  color: #0000004d;
   font-weight: bold;
   font-size: 17px;
 }
