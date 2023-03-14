@@ -1,7 +1,7 @@
 import { StyleSheet, View } from 'react-native';
 import React from 'react';
 import { useToast } from 'react-native-toast-notifications';
-import { Empty } from '@lrn/lrn-app-components';
+import { Empty } from 'lrn-app-components';
 
 const EmptyScreen = () => {
   const toast = useToast();

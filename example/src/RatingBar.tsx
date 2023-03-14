@@ -1,6 +1,6 @@
 import { StyleSheet, View } from 'react-native';
 import React from 'react';
-import { RatingBar } from '@lrn/lrn-app-components';
+import { RatingBar } from 'lrn-app-components';
 
 const RatingBarScreen = () => {
   return (

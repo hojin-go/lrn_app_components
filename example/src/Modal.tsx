@@ -1,6 +1,6 @@
 import { StyleSheet, View, Button, SafeAreaView } from 'react-native';
 import React from 'react';
-import { AbstractModal, Dialog } from '@lrn/lrn-app-components';
+import { AbstractModal, Dialog } from 'lrn-app-components';
 
 const ModalScreen = () => {
   // @ts-ignore
