@@ -6,3 +6,5 @@ export { default as Button } from './components/Button';
 export { default as RatingBar } from './components/RatingBar';
 export { default as Empty } from './components/Empty';
 export { default as AppBar } from './components/AppBar';
+export { default as ActivityIndicator } from './components/ActivityIndicator';
+export { default as Colors } from './components/Colors';

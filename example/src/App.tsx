@@ -10,6 +10,7 @@ import ListTile from '../../src/components/ListTile';
 import AppBarScreen from './AppBarScreen';
 import ButtonScreen from './ButtonScreen';
 import EmptyScreen from './EmptyScreen';
+import IndicatorScreen from './IndicatorScreen';
 import ModalScreen from './Modal';
 import RatingBarScreen from './RatingBar';
 
@@ -19,6 +20,7 @@ const StackData = [
   { name: 'RatingBar', desc: '评分组件', component: RatingBarScreen },
   { name: 'Empty', desc: '空组件', component: EmptyScreen },
   { name: 'AppBar', desc: '导航栏组件', component: AppBarScreen },
+  { name: 'Indicator', desc: '指示器组件', component: IndicatorScreen },
 ];
 
 type Props = {
