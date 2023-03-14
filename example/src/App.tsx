@@ -1,3 +1,4 @@
+import { ListTile } from '@lrn/lrn-app-components';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import * as React from 'react';
@@ -6,7 +7,6 @@ import { StyleSheet, SafeAreaView, ScrollView, Text } from 'react-native';
 import { ToastProvider } from 'react-native-toast-notifications';
 // import { AbstractModal } from 'lrn-app-components';
 
-import ListTile from '../../src/components/ListTile';
 import AppBarScreen from './AppBarScreen';
 import ButtonScreen from './ButtonScreen';
 import EmptyScreen from './EmptyScreen';

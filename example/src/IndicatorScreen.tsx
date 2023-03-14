@@ -1,7 +1,6 @@
 import { StyleSheet, View } from 'react-native';
 import React from 'react';
-import ActivityIndicator from '../../src/components/ActivityIndicator';
-import Colors from '../../src/components/Colors';
+import { ActivityIndicator, Colors } from '@lrn/lrn-app-components';
 
 const IndicatorScreen = () => {
   return (

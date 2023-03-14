@@ -1,6 +1,6 @@
 import { StyleSheet, View } from 'react-native';
 import React from 'react';
-import AppBar from '../../src/components/AppBar';
+import { AppBar } from '@lrn/lrn-app-components';
 
 const AppBarScreen = () => {
   return (

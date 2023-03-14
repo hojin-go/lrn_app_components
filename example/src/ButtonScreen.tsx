@@ -1,7 +1,7 @@
 import { ScrollView, StyleSheet, View } from 'react-native';
 import React from 'react';
-import Button from '../../src/components/Button';
 import ButtonGroup from './components/ButtonGroup';
+import { Button } from '@lrn/lrn-app-components';
 
 const ButtonScreen = () => {
   return (
