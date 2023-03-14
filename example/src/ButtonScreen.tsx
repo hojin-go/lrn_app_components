@@ -112,14 +112,16 @@ const ButtonScreen = () => {
           </Button>
         </ButtonGroup>
         <ButtonGroup styles={{ marginTop: 10 }}>
-          <Button loading>按钮</Button>
-          <Button type="secondary" loading>
+          <Button size="medium" loading>
             按钮
           </Button>
-          <Button type="alert" loading>
+          <Button size="medium" type="secondary" loading>
             按钮
           </Button>
-          <Button type="ghost" loading>
+          <Button size="medium" type="alert" loading>
+            按钮
+          </Button>
+          <Button size="medium" type="ghost" loading>
             按钮
           </Button>
         </ButtonGroup>

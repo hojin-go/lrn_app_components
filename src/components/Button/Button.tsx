@@ -21,7 +21,7 @@ const Button: FC<Props> = ({
   children,
   onClick,
   type,
-  size,
+  size = 'max',
   bold,
   iconSvg,
 }: Props) => {
