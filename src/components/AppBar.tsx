@@ -1,3 +1,4 @@
+/* eslint-disable react-native/no-inline-styles */
 import { StyleSheet, Text, View } from 'react-native';
 import React from 'react';
 
@@ -5,9 +6,7 @@ const AppBar = () => {
   const [rightWidth, setRightWidth] = React.useState(0);
   return (
     <View style={styles.container}>
-      <View
-        style={{ width: rightWidth, backgroundColor: 'red', height: 44 }}
-      ></View>
+      <View style={{ width: rightWidth, backgroundColor: 'red', height: 44 }} />
       <View style={styles.titleView}>
         <Text style={styles.title} numberOfLines={1}>
           我是标题封疆大吏开锁了房价多少离开家
