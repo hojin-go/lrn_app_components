@@ -14,6 +14,7 @@ react native base components
 - [ ] AppBar  
 - [ ] ListTile  
 - [ ] Form
+- [x] LoadingIndicator
 
 ## Installation
 
