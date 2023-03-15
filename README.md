@@ -8,7 +8,9 @@ react native base components
 - [x] Modal  
   - [ ] 🏃Dialog & Alert  
   - [ ] ActionSheet  
-  “ 安卓上动画效果不理想，可参考：https://github.com/adammcarth/react-native-segmented-picker/blob/master/src/components/SegmentedPicker/SegmentedPicker.tsx#L640 ”
+
+  >安卓上动画效果不理想，可参考：https://github.com/adammcarth/react-native-segmented-picker/blob/master/src/components/SegmentedPicker/SegmentedPicker.tsx#L640  
+
 - [ ] Picker  
 - [ ] Price  
 - [x] RatingBar
