@@ -1,65 +1,37 @@
-import { View, Text, Platform } from 'react-native';
-import React from 'react';
-import ScrollPickerPure from './ScrollPickerPure';
+import { View, Platform } from 'react-native';
+import React, { useEffect } from 'react';
+import ScrollPickerAndroid from './ScrollPickerAndroid';
+import type ScrollPickerItemData from './ScrollPickerItemData';
+import ScrollPickerIOS from './ScrollPickerIOS';
 
 type ScrollPickerProps = {
-  selectedIndex?: number;
-  dataSource: Array<string | number>;
-  onValueChange?: (value: string | number, index: number) => void;
+  selection?: ScrollPickerItemData;
+  dataSource: Array<ScrollPickerItemData>;
+  onValueChange?: (value: ScrollPickerItemData) => void;
 };
 
 const ScrollPicker = (props: ScrollPickerProps) => {
+  useEffect(() => {
+    console.log(
+      'selection changed in pickerWrapper: ' + props.selection?.label
+    );
+  }, [props.selection]);
+
   return (
     <View style={{ height: 200, width: '100%' }}>
       {Platform.select({
         ios: (
-          <ScrollPickerPure
+          <ScrollPickerIOS
             dataSource={props.dataSource}
-            selectedIndex={props.selectedIndex ?? 0}
-            renderItem={(data, _index, _isSelected) => {
-              return (
-                <Text
-                  style={{
-                    color: _isSelected ? 'black' : 'grey',
-                    fontSize: 17,
-                  }}
-                >
-                  {data}
-                </Text>
-              );
-            }}
+            selection={props.selection}
             onValueChange={props.onValueChange}
-            wrapperHeight={200}
-            // wrapperWidth={150}
-            wrapperColor="#FFFFFF"
-            itemHeight={44}
-            highlightColor="#d8d8d8"
-            highlightBorderWidth={0.5}
           />
         ),
         android: (
-          <ScrollPickerPure
+          <ScrollPickerAndroid
             dataSource={props.dataSource}
-            selectedIndex={props.selectedIndex ?? 0}
-            renderItem={(data, _index, _isSelected) => {
-              return (
-                <Text
-                  style={{
-                    color: _isSelected ? 'black' : 'grey',
-                    fontSize: 17,
-                  }}
-                >
-                  {data}
-                </Text>
-              );
-            }}
+            selection={props.selection}
             onValueChange={props.onValueChange}
-            wrapperHeight={200}
-            // wrapperWidth={150}
-            wrapperColor="#FFFFFF"
-            itemHeight={44}
-            highlightColor="#d8d8d8"
-            highlightBorderWidth={0.5}
           />
         ),
       })}

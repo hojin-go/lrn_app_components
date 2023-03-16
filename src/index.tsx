@@ -8,4 +8,9 @@ export { default as Empty } from './components/Empty';
 export { default as AppBar } from './components/AppBar';
 export { default as ActivityIndicator } from './components/ActivityIndicator';
 export { default as Colors } from './components/Colors';
-export { default as ScrollPicker } from './components/ScrollPicker/ScrollPicker';
+export {
+  ScrollPicker,
+  ScrollPickerAndroid,
+  ScrollPickerIOS,
+  ScrollPickerItemData,
+} from './components/ScrollPicker/index';

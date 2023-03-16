@@ -149,6 +149,7 @@
     "example": "example"
   },
   "dependencies": {
+    "@react-native-picker/picker": "^2.4.8",
     "jest-cli": "^28.1.3",
     "jetifier": "^2.0.0",
     "metro-config": "^0.72.3",

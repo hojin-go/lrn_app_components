@@ -92,8 +92,19 @@ export default function ScrollPickerPure({
         timer && clearTimeout(timer);
       };
     },
-    [initialized, itemHeight, selectedIndex, sView, timer]
+    [initialized, itemHeight, selectedIndex, sView, timer, props.selectedIndex]
   );
+
+  useEffect(() => {
+    if (props.selectedIndex !== selectedIndex) {
+      setSelectedIndex(props.selectedIndex || 0);
+      sView?.current?.scrollTo({
+        y: itemHeight * (props.selectedIndex || 0),
+      });
+      return;
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [itemHeight, props.selectedIndex]);
 
   const renderPlaceHolder = () => {
     const h = (wrapperHeight - itemHeight) / 2;
@@ -213,6 +224,9 @@ export default function ScrollPickerPure({
     top: (wrapperHeight - itemHeight) / 2,
     height: itemHeight,
     width: highlightWidth,
+    backgroundColor: highlightColor,
+    marginHorizontal: 10,
+    borderRadius: 10,
     borderTopColor: highlightColor,
     borderBottomColor: highlightColor,
     borderTopWidth: highlightBorderWidth,

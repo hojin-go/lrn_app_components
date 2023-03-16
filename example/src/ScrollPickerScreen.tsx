@@ -1,38 +1,50 @@
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 import React from 'react';
-import { ScrollPicker } from 'lrn-app-components';
+import { ScrollPicker, ScrollPickerItemData } from 'lrn-app-components';
 
 const ScrollPickerScreen = () => {
+  const [selection, setSelection] = React.useState<ScrollPickerItemData>();
+  const dataSource = [
+    { label: '上海', value: 'shanghai' },
+    { label: '北京', value: 'beijing' },
+    { label: '广州', value: 'guangzhou' },
+    { label: '深圳', value: 'shenzhen' },
+    { label: '杭州', value: 'hangzhou' },
+    { label: '南京', value: 'nanjing' },
+    { label: '成都', value: 'chengdu' },
+    { label: '武汉', value: 'wuhan' },
+    { label: '西安', value: 'xian' },
+    { label: '苏州', value: 'suzhou' },
+    { label: '天津', value: 'tianjin' },
+    { label: '重庆', value: 'chongqing' },
+    { label: '长沙', value: 'changsha' },
+  ];
   return (
     <View style={styles.container}>
-      <View style={{ height: 200, width: '100%' }}>
-        <ScrollPicker
-          dataSource={[
-            '上海',
-            '北京',
-            '广州',
-            '深圳',
-            '杭州',
-            '南京',
-            '成都',
-            '武汉',
-            '西安',
-            '长沙',
-            '苏州',
-            '天津',
-          ]}
-          selectedIndex={4}
-          onValueChange={(_data, _selectedIndex) => {
-            console.log('>>', _data, _selectedIndex);
-          }}
-          // wrapperHeight={200}
-          // // wrapperWidth={150}
-          // wrapperColor="#FFFFFF"
-          // itemHeight={44}
-          // highlightColor="#d8d8d8"
-          // highlightBorderWidth={0.5}
-        />
-      </View>
+      <Text>{selection ? JSON.stringify(selection) : '未选择'}</Text>
+      <ScrollPicker
+        dataSource={dataSource}
+        selection={selection}
+        onValueChange={(value) => {
+          setSelection(value);
+        }}
+      />
+      {/* <Text>iOS 👇🏻</Text>
+      <ScrollPickerIOS
+        dataSource={dataSource}
+        selection={selection}
+        onValueChange={(value) => {
+          setSelection(value);
+        }}
+      />
+      <Text>Android 👇🏻</Text>
+      <ScrollPickerAndroid
+        dataSource={dataSource}
+        selection={selection}
+        onValueChange={(value) => {
+          setSelection(value);
+        }}
+      /> */}
     </View>
   );
 };
