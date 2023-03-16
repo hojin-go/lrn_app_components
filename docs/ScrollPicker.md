@@ -2,11 +2,11 @@
 
 ## Screen shots
 
-![](./images/20230316-123835.gif)
+![](https://codeup.aliyun.com/61a498ef216a665eb18b936e/lanehub-frontend/lrn-app-components/blob/fb09d29912ed1b2ac7631836a25e201c767389ac/docs/images/20230316-123835.gif)
 
 ## Usage
 
-```jsx
+```typescriptreact
 import { ScrollPicker, ScrollPickerItemData } from 'lrn-app-components';
 
 const ScrollPickerScreen = () => {
