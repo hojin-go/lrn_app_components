@@ -3,24 +3,25 @@
 react native base components
 
 ## features
-✅ Button
-⭕️ ButtonGroup  
+✅ Button  
+⭕️ ButtonGroup   
 
 >安卓上动画效果不理想，[参考网址](https://github.com/adammcarth/react-native-segmented-picker/blob/master/src/components/SegmentedPicker/SegmentedPicker.tsx#L640)
-✅ Modal  
-⭕️ 🏃Dialog & Alert  
-⭕️ ActionSheet  
+
+✅ Modal   
+⭕️ 🏃Dialog & Alert    
+⭕️ ActionSheet    
 
 ✅ [Picker](docs/ScrollPicker.md)   
-⭕️ 多列选择器·级联
-⭕️ 多列选择器·非级联
-⭕️ Price  
+⭕️ 多列选择器·级联  
+⭕️ 多列选择器·非级联  
+⭕️ Price    
 
-✅ RatingBar
-⭕️ AppBar  
-⭕️ ListTile  
-⭕️ Form
-✅ LoadingIndicator
+✅ RatingBar  
+⭕️ AppBar    
+⭕️ ListTile    
+⭕️ Form  
+✅ LoadingIndicator  
 
 ## Installation
 
