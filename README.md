@@ -3,20 +3,19 @@
 react native base components
 
 ## features
-[x] Button
-[ ] ButtonGroup  
-[x] Modal  
-[ ] 🏃Dialog & Alert  
-[ ] ActionSheet  
->安卓上动画效果不理想，可参考：https://github.com/adammcarth/react-native-segmented-picker/blob/master/src/components/SegmentedPicker/SegmentedPicker.tsx#L640  
-
-[x] [Picker](docs/ScrollPicker.md)   
-[ ] Price  
-[x] RatingBar
-[ ] AppBar  
-[ ] ListTile  
-[ ] Form
-[x] LoadingIndicator
+- [x] Button
+- [ ] ButtonGroup  
+>安卓上动画效果不理想，[参考网址](https://github.com/adammcarth/react-native-segmented-picker/blob/master/src/components/SegmentedPicker/SegmentedPicker.tsx#L640)
+- [x] Modal  
+    - [ ] 🏃Dialog & Alert  
+    - [ ] ActionSheet  
+- [x] [Picker](docs/ScrollPicker.md)   
+- [ ] Price  
+- [x] RatingBar
+- [ ] AppBar  
+- [ ] ListTile  
+- [ ] Form
+- [x] LoadingIndicator
 
 ## Installation
 
