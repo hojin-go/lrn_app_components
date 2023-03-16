@@ -2,7 +2,7 @@
 
 ## Screen shots
 
-![](images/20230316-123835.gif)
+![](docs/images/20230316-123835.gif)
 
 ## Usage
 
