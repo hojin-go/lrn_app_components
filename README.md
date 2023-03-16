@@ -11,7 +11,7 @@ react native base components
 
   >安卓上动画效果不理想，可参考：https://github.com/adammcarth/react-native-segmented-picker/blob/master/src/components/SegmentedPicker/SegmentedPicker.tsx#L640  
 
-- [x] [Picker](./docs/ScrollPicker.md):   
+- [x] [Picker](./docs/ScrollPicker.md)  
 - [ ] Price  
 - [x] RatingBar
 - [ ] AppBar  
