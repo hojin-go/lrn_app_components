@@ -9,7 +9,7 @@ react native base components
 >安卓上动画效果不理想，[参考网址](https://github.com/adammcarth/react-native-segmented-picker/blob/master/src/components/SegmentedPicker/SegmentedPicker.tsx#L640)
 
 ✅ Modal   
-⭕️ 🏃Dialog & Alert    
+✅ [Dialog & Alert](docs/AlertDialog.md)    
 ⭕️ ActionSheet    
 
 ✅ [Picker](docs/ScrollPicker.md)   
