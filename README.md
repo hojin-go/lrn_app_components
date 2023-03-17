@@ -10,7 +10,7 @@ react native base components
 
 ✅ Modal   
 ✅ [AlertDialog](docs/AlertDialog.md)    
-✅ [ActionSheet](docs/ActionSheet.md)
+✅ [ActionSheet](docs/ActionSheet.md)  
 ✅ [BottomSheet](docs/BottomSheet.md)    
 
 ✅ [Picker](docs/ScrollPicker.md)   
