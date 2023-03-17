@@ -14,8 +14,8 @@ react native base components
 ✅ [BottomSheet](docs/BottomSheet.md)    
 
 ✅ [Picker](docs/ScrollPicker.md)   
-⭕️ 多列选择器·级联  
-⭕️ 多列选择器·非级联  
+⭕️ 多列选择器·级联（cascade）   
+⭕️ 多列选择器·非级联（unrelated）  
 ⭕️ Price    
 
 ✅ RatingBar  
