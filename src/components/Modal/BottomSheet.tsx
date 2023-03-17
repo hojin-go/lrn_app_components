@@ -41,9 +41,9 @@ const BottomSheet = (props: Props) => {
       visible={visible}
       transparent
       animationType="none"
-      onRequestClose={onCloseModal}
+      onRequestClose={props.onClose && onCloseModal}
     >
-      <FadeInView ref={fadeInRef} onPress={onCloseModal} />
+      <FadeInView ref={fadeInRef} onPress={props.onClose && onCloseModal} />
       <SlideInView ref={slideInRef}>{props.children}</SlideInView>
     </Modal>
   );

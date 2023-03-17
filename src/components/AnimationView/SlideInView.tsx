@@ -1,5 +1,5 @@
 import { Animated, Dimensions, Easing, View } from 'react-native';
-import React, { forwardRef, useEffect, useImperativeHandle } from 'react';
+import React, { forwardRef, useImperativeHandle } from 'react';
 
 type Props = {
   direction?: 'down';
@@ -33,14 +33,21 @@ const SlideInView = forwardRef<SlideInView, Props>((props, ref) => {
     close,
   }));
 
-  useEffect(() => {
+  const startAnimation = () => {
     Animated.timing(translateYAni, {
       toValue: 1,
       duration: 250,
       easing: Easing.linear,
       useNativeDriver: false, // <-- neccessary
     }).start();
-  }, [translateYAni]);
+  };
+
+  // useEffect(() => {
+  //   console.log('heightChanged', 'time', new Date().getTime());
+
+  //   startAnimation();
+  //   // eslint-disable-next-line react-hooks/exhaustive-deps
+  // }, [bodyHeight]);
 
   return (
     <Animated.View
@@ -60,7 +67,11 @@ const SlideInView = forwardRef<SlideInView, Props>((props, ref) => {
     >
       <View
         onLayout={(p0) => {
-          setBodyHeight(p0.nativeEvent.layout.height);
+          const height = Math.ceil(p0.nativeEvent.layout.height);
+          setBodyHeight(height);
+          startAnimation();
+
+          // setBodyHeight(height);
         }}
       >
         {props.children}

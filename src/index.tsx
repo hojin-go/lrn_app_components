@@ -15,4 +15,4 @@ export {
   ScrollPickerItemData,
 } from './components/ScrollPicker/index';
 
-export { default as BottomSheet } from './components/Modal/BottomSheet';
+export { BottomSheet, ActionSheet } from './components/Modal/index';

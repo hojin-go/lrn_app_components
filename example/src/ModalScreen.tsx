@@ -1,7 +1,8 @@
-import { StyleSheet, View, Button, SafeAreaView, Text } from 'react-native';
+import { StyleSheet, View, Button, Text } from 'react-native';
 import React from 'react';
 import {
   AbstractModal,
+  ActionSheet,
   AlertDialog,
   BottomSheet,
   Dialog,
@@ -18,6 +19,9 @@ const ModalScreen = () => {
   const [bottomSheetVisible, setBottomSheetVisible] = React.useState(false);
   // alert dialog visible
   const [alertVisible, setAlertVisible] = React.useState(false);
+
+  // action sheet visible
+  const [actionSheetVisible, setActionSheetVisible] = React.useState(false);
 
   const onClose = () => {
     setBottomModalVisible(false);
@@ -39,21 +43,22 @@ const ModalScreen = () => {
       {/* Alert dialog button */}
       <View style={styles.spacing} />
       <Button onPress={() => setAlertVisible(true)} title="show Alert" />
+      <View style={styles.spacing} />
+      <Button
+        onPress={() => setActionSheetVisible(true)}
+        title="show ActionSheet"
+      />
       <AbstractModal
         visible={bottomModalVisible}
         onClose={onClose}
         contentStyle={styles.bottomModal}
       >
-        <SafeAreaView>
-          <View style={styles.card} />
-        </SafeAreaView>
+        <View style={styles.card} />
       </AbstractModal>
       <Dialog visible={centerModalVisible} onClose={onClose}>
-        <SafeAreaView>
-          <View style={styles.card}>
-            <Button title="关闭" onPress={() => setCenterModalVisible(false)} />
-          </View>
-        </SafeAreaView>
+        <View style={styles.card}>
+          <Button title="关闭" onPress={() => setCenterModalVisible(false)} />
+        </View>
       </Dialog>
       <AlertDialog
         visible={alertVisible}
@@ -88,6 +93,28 @@ const ModalScreen = () => {
           </Text>
         </View>
       </BottomSheet>
+
+      <ActionSheet
+        visible={actionSheetVisible}
+        content={'弹窗内容弹窗内容弹窗内容弹窗内容弹窗内容弹窗内容弹窗内容'}
+        actions={[
+          {
+            text: '取消',
+            type: 'cancel',
+            onPress: () => setActionSheetVisible(false),
+          },
+          {
+            text: '确定',
+            type: 'primary',
+            onPress: () => setActionSheetVisible(false),
+          },
+          {
+            text: '危险',
+            type: 'danger',
+            onPress: () => setActionSheetVisible(false),
+          },
+        ]}
+      />
     </View>
   );
 };
