@@ -6,8 +6,8 @@ import {
   type StyleProp,
   type ViewStyle,
   StyleSheet,
+  Modal,
 } from 'react-native';
-import Modal from 'react-native-modal';
 import Toast from 'react-native-toast-notifications';
 
 type Props = {
@@ -17,7 +17,7 @@ type Props = {
   useNativeDriver?: boolean;
   contentStyle?: StyleProp<ViewStyle>;
   children: ReactNode;
-  onClose: () => void;
+  onClose?: () => void;
 };
 
 const Dialog: FC<Props> = (props: Props) => {
@@ -31,30 +31,24 @@ const Dialog: FC<Props> = (props: Props) => {
   } = props;
 
   return (
-    <Modal
-      style={styles.backdrop}
-      isVisible={visible}
-      backdropColor="#000"
-      backdropOpacity={0.37}
-      onBackdropPress={onClose}
-      animationIn="fadeIn"
-      animationOut={Platform.OS === 'ios' ? 'fadeOut' : 'fadeOutDown'}
-    >
-      {avoidKeyboard ? (
-        <KeyboardAvoidingView
-          style={[styles.content, contentStyle]}
-          behavior={Platform.OS === 'ios' ? 'padding' : undefined}
-          pointerEvents="box-none"
-        >
-          {toastRef && <Toast ref={toastRef} />}
-          {children}
-        </KeyboardAvoidingView>
-      ) : (
-        <View style={[styles.content, contentStyle]}>
-          {toastRef && <Toast ref={toastRef} />}
-          {children}
-        </View>
-      )}
+    <Modal visible={visible} animationType="fade" onRequestClose={onClose}>
+      <View style={styles.container}>
+        {avoidKeyboard ? (
+          <KeyboardAvoidingView
+            style={[styles.content, contentStyle]}
+            behavior={Platform.OS === 'ios' ? 'padding' : undefined}
+            pointerEvents="box-none"
+          >
+            {toastRef && <Toast ref={toastRef} />}
+            {children}
+          </KeyboardAvoidingView>
+        ) : (
+          <View style={[styles.content, contentStyle]}>
+            {toastRef && <Toast ref={toastRef} />}
+            {children}
+          </View>
+        )}
+      </View>
     </Modal>
   );
 };
@@ -62,11 +56,12 @@ const Dialog: FC<Props> = (props: Props) => {
 export default Dialog;
 
 const styles = StyleSheet.create({
-  backdrop: {
+  container: {
     flex: 1,
     margin: 0,
     justifyContent: 'center',
     alignItems: 'center',
+    backgroundColor: 'rgba(0, 0, 0, 0.37)',
   },
 
   content: {

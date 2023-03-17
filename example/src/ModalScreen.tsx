@@ -1,6 +1,11 @@
 import { StyleSheet, View, Button, SafeAreaView, Text } from 'react-native';
 import React from 'react';
-import { AbstractModal, BottomSheet, Dialog } from 'lrn-app-components';
+import {
+  AbstractModal,
+  AlertDialog,
+  BottomSheet,
+  Dialog,
+} from 'lrn-app-components';
 
 const ModalScreen = () => {
   // @ts-ignore
@@ -11,6 +16,8 @@ const ModalScreen = () => {
     React.useState<boolean>(false);
 
   const [bottomSheetVisible, setBottomSheetVisible] = React.useState(false);
+  // alert dialog visible
+  const [alertVisible, setAlertVisible] = React.useState(false);
 
   const onClose = () => {
     setBottomModalVisible(false);
@@ -29,6 +36,9 @@ const ModalScreen = () => {
       />
       <View style={styles.spacing} />
       <Button onPress={() => setCenterModalVisible(true)} title="show Dialog" />
+      {/* Alert dialog button */}
+      <View style={styles.spacing} />
+      <Button onPress={() => setAlertVisible(true)} title="show Alert" />
       <AbstractModal
         visible={bottomModalVisible}
         onClose={onClose}
@@ -38,19 +48,34 @@ const ModalScreen = () => {
           <View style={styles.card} />
         </SafeAreaView>
       </AbstractModal>
-      <Dialog
-        visible={centerModalVisible}
-        onClose={onClose}
-        contentStyle={{
-          backgroundColor: 'white',
-          overflow: 'hidden',
-          width: 300,
-        }}
-      >
+      <Dialog visible={centerModalVisible} onClose={onClose}>
         <SafeAreaView>
-          <View style={styles.card} />
+          <View style={styles.card}>
+            <Button title="关闭" onPress={() => setCenterModalVisible(false)} />
+          </View>
         </SafeAreaView>
       </Dialog>
+      <AlertDialog
+        visible={alertVisible}
+        title={
+          '弹窗标题弹窗标题弹窗标题弹窗标题弹窗标题弹窗标题弹窗标题弹窗标题'
+        }
+        content={'弹窗内容弹窗内容弹窗内容弹窗内容弹窗内容弹窗内容弹窗内容'}
+        actions={[
+          { text: '取消', onPress: () => setAlertVisible(false) },
+          // {
+          //   text: '确定',
+          //   type: 'primary',
+          //   onPress: () => setAlertVisible(false),
+          // },
+          // {
+          //   text: '危险',
+          //   type: 'danger',
+          //   onPress: () => setAlertVisible(false),
+          // },
+        ]}
+      />
+
       <BottomSheet
         visible={bottomSheetVisible}
         onClose={() => setBottomSheetVisible(false)}
@@ -85,6 +110,8 @@ const styles = StyleSheet.create({
   card: {
     width: '100%',
     height: 400,
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   spacing: {
     height: 20,

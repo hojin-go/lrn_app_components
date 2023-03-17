@@ -1,5 +1,5 @@
 export { default as AbstractModal } from './components/AbstractModal';
-export { default as Dialog } from './components/Dialog';
+export { Dialog, AlertDialog } from './components/Dialog/index';
 export { default as ListTile } from './components/ListTile';
 export { default as Svg } from './components/Svg';
 export { default as Button } from './components/Button';
