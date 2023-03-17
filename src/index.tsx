@@ -14,3 +14,5 @@ export {
   ScrollPickerIOS,
   ScrollPickerItemData,
 } from './components/ScrollPicker/index';
+
+export { default as BottomSheet } from './components/Modal/BottomSheet';

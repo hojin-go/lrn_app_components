@@ -11,9 +11,10 @@ import AppBarScreen from './AppBarScreen';
 import ButtonScreen from './ButtonScreen';
 import EmptyScreen from './EmptyScreen';
 import IndicatorScreen from './IndicatorScreen';
-import ModalScreen from './Modal';
+import ModalScreen from './ModalScreen';
 import RatingBarScreen from './RatingBar';
 import ScrollPickerScreen from './ScrollPickerScreen';
+import AnimationScreen from './AnimationScreen';
 
 const StackData = [
   { name: 'Modal', desc: '模态组件', component: ModalScreen },
@@ -23,6 +24,7 @@ const StackData = [
   { name: 'AppBar', desc: '导航栏组件', component: AppBarScreen },
   { name: 'Indicator', desc: '指示器组件', component: IndicatorScreen },
   { name: 'ScrollPicker', desc: '滚动选择器', component: ScrollPickerScreen },
+  { name: 'Animation', desc: '动画', component: AnimationScreen },
 ];
 
 type Props = {
