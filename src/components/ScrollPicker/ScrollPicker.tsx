@@ -1,22 +1,18 @@
 import { View, Platform } from 'react-native';
-import React, { useEffect } from 'react';
+import React from 'react';
 import ScrollPickerAndroid from './ScrollPickerAndroid';
-import type ScrollPickerItemData from './ScrollPickerItemData';
+import type { PickerItemData } from './PickerItemData';
 import ScrollPickerIOS from './ScrollPickerIOS';
 
-type ScrollPickerProps = {
-  selection?: ScrollPickerItemData;
-  dataSource: Array<ScrollPickerItemData>;
-  onValueChange?: (value: ScrollPickerItemData) => void;
+type ScrollPickerProps<T extends string | number> = {
+  selection?: T;
+  dataSource: Array<PickerItemData<T>>;
+  onValueChange?: (value: PickerItemData<T>) => void;
 };
 
-const ScrollPicker = (props: ScrollPickerProps) => {
-  useEffect(() => {
-    console.log(
-      'selection changed in pickerWrapper: ' + props.selection?.label
-    );
-  }, [props.selection]);
-
+const ScrollPicker = <T extends string | number>(
+  props: ScrollPickerProps<T>
+) => {
   return (
     <View style={{ height: 200, width: '100%' }}>
       {Platform.select({

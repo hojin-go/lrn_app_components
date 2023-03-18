@@ -1,23 +1,24 @@
 import { StyleSheet, Text, View } from 'react-native';
 import React, { useEffect } from 'react';
 import ScrollPickerPure from './ScrollPickerPure';
-import type ScrollPickerItemData from './ScrollPickerItemData';
 
-type ScrollPickerAndroidProps = {
-  selection?: ScrollPickerItemData;
-  dataSource: Array<ScrollPickerItemData>;
-  onValueChange?: (value: ScrollPickerItemData) => void;
+import type { PickerItemData, PickerItemValue } from './PickerItemData';
+
+type ScrollPickerAndroidProps<T = PickerItemValue> = {
+  selection?: T;
+  dataSource: PickerItemData<T>[];
+  onValueChange?: (value: PickerItemData<T>) => void;
 };
 
-const ScrollPickerAndroid = (props: ScrollPickerAndroidProps) => {
+const ScrollPickerAndroid = <T extends PickerItemValue>(
+  props: ScrollPickerAndroidProps<T>
+) => {
   const [selectionIndex, setSelectionIndex] = React.useState(0);
 
   useEffect(() => {
     const selection = props.selection ?? props.dataSource[0];
     // find index of selection
-    const idx = props.dataSource.findIndex(
-      (obj) => obj.value === selection?.value
-    );
+    const idx = props.dataSource.findIndex((obj) => obj.value === selection);
 
     setSelectionIndex(idx);
   }, [props.selection, props.dataSource]);

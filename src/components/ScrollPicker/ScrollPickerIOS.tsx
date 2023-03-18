@@ -1,20 +1,22 @@
 import { StyleSheet, View } from 'react-native';
 import React from 'react';
 import { Picker } from '@react-native-picker/picker';
-import type ScrollPickerItemData from './ScrollPickerItemData';
+import type { PickerItemData, PickerItemValue } from './PickerItemData';
 
-type ScrollPickerIOSProps = {
-  selection?: ScrollPickerItemData;
-  dataSource: Array<ScrollPickerItemData>;
-  onValueChange?: (value: ScrollPickerItemData) => void;
+type ScrollPickerIOSProps<T = PickerItemValue> = {
+  selection?: T;
+  dataSource: PickerItemData<T>[];
+  onValueChange?: (value: PickerItemData<T>) => void;
 };
 
-const ScrollPickerIOS = (props: ScrollPickerIOSProps) => {
+const ScrollPickerIOS = <T extends PickerItemValue>(
+  props: ScrollPickerIOSProps<T>
+) => {
   const selection = props.selection ?? props.dataSource[0];
   return (
     <View style={styles.container}>
       <Picker
-        selectedValue={selection?.value}
+        selectedValue={selection}
         itemStyle={styles.itemStyle}
         onValueChange={(value) => {
           const item = props.dataSource.find((obj) => obj.value === value);

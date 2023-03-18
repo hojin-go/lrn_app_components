@@ -14,6 +14,8 @@ import IndicatorScreen from './IndicatorScreen';
 import ModalScreen from './ModalScreen';
 import RatingBarScreen from './RatingBar';
 import ScrollPickerScreen from './ScrollPickerScreen';
+import UnrelatedColumnPickerScreen from './UnrelatedColumnPickerScreen';
+import CascadeColumnPickerScreen from './CascadeColumnPickerScreen';
 
 const StackData = [
   { name: 'Modal', desc: '模态组件', component: ModalScreen },
@@ -23,6 +25,16 @@ const StackData = [
   { name: 'AppBar', desc: '导航栏组件', component: AppBarScreen },
   { name: 'Indicator', desc: '指示器组件', component: IndicatorScreen },
   { name: 'ScrollPicker', desc: '滚动选择器', component: ScrollPickerScreen },
+  {
+    name: 'UnrelatedColumnPicker',
+    desc: '多列选择器-非级联',
+    component: UnrelatedColumnPickerScreen,
+  },
+  {
+    name: 'CascadeColumnPicker',
+    desc: '多列选择器-级联',
+    component: CascadeColumnPickerScreen,
+  },
 ];
 
 type Props = {

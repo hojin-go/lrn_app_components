@@ -1,6 +1,5 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import {
-  Dimensions,
   NativeScrollEvent,
   NativeSyntheticEvent,
   Platform,
@@ -20,8 +19,6 @@ function isNumeric(str: string | unknown): boolean {
     !isNaN(parseFloat(str))
   ); // ...and ensure strings of whitespace fail
 }
-
-const deviceWidth = Dimensions.get('window').width;
 
 const isViewStyle = (style: ViewProps['style']): style is ViewStyle => {
   return (
@@ -207,7 +204,6 @@ export default function ScrollPickerPure({
   };
 
   const { header, footer } = renderPlaceHolder();
-  const highlightWidth = (isViewStyle(style) ? style.width : 0) || deviceWidth;
   const highlightColor = props.highlightColor || '#333';
   const highlightBorderWidth =
     props.highlightBorderWidth || StyleSheet.hairlineWidth;
@@ -217,13 +213,16 @@ export default function ScrollPickerPure({
     flex: 1,
     backgroundColor: props.wrapperColor || '#fafafa',
     overflow: 'hidden',
+    position: 'relative',
   };
 
   const highlightStyle: ViewStyle = {
     position: 'absolute',
     top: (wrapperHeight - itemHeight) / 2,
+    left: 0,
+    right: 0,
     height: itemHeight,
-    width: highlightWidth,
+    // width: '100%',
     backgroundColor: highlightColor,
     marginHorizontal: 10,
     borderRadius: 10,

@@ -12,7 +12,10 @@ export {
   ScrollPicker,
   ScrollPickerAndroid,
   ScrollPickerIOS,
-  ScrollPickerItemData,
+  PickerItemData,
+  PickerItemValue,
+  ColumnPicker,
+  CascadeColumnPicker,
 } from './components/ScrollPicker/index';
 
 export { BottomSheet, ActionSheet } from './components/Modal/index';
