@@ -1,9 +1,9 @@
 import { StyleSheet, Text, View } from 'react-native';
 import React from 'react';
-import { ScrollPicker, ScrollPickerItemData } from 'lrn-app-components';
+import { ScrollPicker, PickerItemData } from 'lrn-app-components';
 
 const ScrollPickerScreen = () => {
-  const [selection, setSelection] = React.useState<ScrollPickerItemData>();
+  const [selection, setSelection] = React.useState<PickerItemData>();
   const dataSource = [
     { label: '上海', value: 'shanghai' },
     { label: '北京', value: 'beijing' },
@@ -24,7 +24,7 @@ const ScrollPickerScreen = () => {
       <Text>{selection ? JSON.stringify(selection) : '未选择'}</Text>
       <ScrollPicker
         dataSource={dataSource}
-        selection={selection}
+        selection={selection?.value}
         onValueChange={(value) => {
           setSelection(value);
         }}
