@@ -16,6 +16,7 @@ import RatingBarScreen from './RatingBar';
 import ScrollPickerScreen from './ScrollPickerScreen';
 import UnrelatedColumnPickerScreen from './UnrelatedColumnPickerScreen';
 import CascadeColumnPickerScreen from './CascadeColumnPickerScreen';
+import PriceScreen from './PriceScreen';
 
 const StackData = [
   { name: 'Modal', desc: '模态组件', component: ModalScreen },
@@ -35,6 +36,7 @@ const StackData = [
     desc: '多列选择器-级联',
     component: CascadeColumnPickerScreen,
   },
+  { name: 'Price', desc: '价格组件', component: PriceScreen },
 ];
 
 type Props = {

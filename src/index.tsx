@@ -19,3 +19,4 @@ export {
 } from './components/ScrollPicker/index';
 
 export { BottomSheet, ActionSheet } from './components/Modal/index';
+export { default as Price } from './components/Price';
