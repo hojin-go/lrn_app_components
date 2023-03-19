@@ -27,6 +27,7 @@ const ModalScreen = () => {
     setBottomModalVisible(false);
     setCenterModalVisible(false);
   };
+
   return (
     <View style={styles.container}>
       <Button
@@ -85,7 +86,7 @@ const ModalScreen = () => {
         visible={bottomSheetVisible}
         onClose={() => setBottomSheetVisible(false)}
       >
-        <View style={styles.actionSheetContainer}>
+        <View style={[styles.actionSheetContainer]}>
           <Text style={styles.actionSheetText}>
             {
               '- Bottom Sheet 基于 Modal 自定义动画效果实现，展示高度取决于child的高度。\n- 不支持层叠展示。\n- 在安卓上面展示友好，不会出现闪屏的问题。'

@@ -2,6 +2,10 @@ import { StyleProp, StyleSheet, Text, TextStyle, View } from 'react-native';
 import React, { useMemo } from 'react';
 import Colors from './Colors';
 
+// see: https://github.com/moment/luxon/issues/51#issuecomment-886053624
+import 'intl';
+import 'intl/locale-data/jsonp/en';
+
 type Props = {
   size: 'small' | 'medium' | 'large' | 'xlarge';
   color?: string;
@@ -77,7 +81,6 @@ const Price = (props: Props) => {
       maximumFractionDigits: 2,
       useGrouping: false,
     }).format(num);
-    console.log('string.formatted: ', stringFormatted);
     // splite the value string by '.', get int value and decimal value
     const valueArray = stringFormatted.split('.');
     // get the int value, parse as number
@@ -85,7 +88,6 @@ const Price = (props: Props) => {
     // get the decimal value
     const decimalValue = valueArray[1] ?? null;
 
-    console.log('intValue: ', intValue, 'decimalValue: ', decimalValue);
     return [intValue, decimalValue];
   }, [props.value]);
 

@@ -3,7 +3,7 @@
 react native base components
 
 ## features
-✅ Button  
+✅ [Button](docs/Button.md)  
 
 ✅ Modal   
 ✅ [AlertDialog](docs/AlertDialog.md)    
@@ -11,9 +11,9 @@ react native base components
 ✅ [BottomSheet](docs/BottomSheet.md)    
 
 ✅ [Picker](docs/ScrollPicker.md)   
-✅ 多列选择器·级联（cascade）   
-✅ 多列选择器·非级联（unrelated）  
-✅ Price    
+✅ [多列选择器·级联（cascade）](docs/CascadeColumnPicker.md)   
+✅ [多列选择器·非级联（unrelated）](docs/ColumnPicker.md)  
+✅ [Price](docs/Price.md)    
 
 ✅ RatingBar  
 ⭕️ AppBar    
@@ -24,6 +24,8 @@ react native base components
 ## Installation
 
 ```sh
+# 组件内置了一些svg图标，需要安装react-native-svg
+yarn add react-native-svg
 yarn add @lrn/lrn-app-components
 ```
 

@@ -19,7 +19,7 @@ const ScrollPicker = <T extends string | number>(
         ios: (
           <ScrollPickerIOS
             dataSource={props.dataSource}
-            selection={props.selection}
+            selection={props.selection ?? props.dataSource?.[0]?.value}
             onValueChange={props.onValueChange}
           />
         ),

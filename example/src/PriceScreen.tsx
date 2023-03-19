@@ -48,8 +48,8 @@ const styles = StyleSheet.create({
     width: '100%',
     flexDirection: 'row',
     margin: 10,
-    backgroundColor: 'yellow',
     alignItems: 'center',
+    paddingHorizontal: 20,
   },
   rowTitle: {
     width: 52,
