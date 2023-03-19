@@ -7,7 +7,12 @@
     "android": "expo start --android",
     "lrn": "lrn start --dev-client",
     "web": "expo start --web",
-    "ios": "expo start --ios"
+    "ios": "expo start --ios",
+    // 生成 expo 二维码可分享出去
+    "deploy:qr": "eas update --platform=all --auto",
+    "publish": "npm pack && npm publish",
+    "bump:minor": "npm version minor",
+    "bump:patch": "npm version patch"
   },
   "dependencies": {
     "@lrn/lrn-base": "^0.0.17",
@@ -15,12 +20,13 @@
     "@react-navigation/native-stack": "^6.9.12",
     "expo": "~47.0.12",
     "expo-status-bar": "~1.4.2",
+    "expo-updates": "~0.15.6",
     "react": "18.1.0",
     "react-dom": "18.1.0",
     "react-native": "0.70.5",
     "react-native-screens": "~3.18.0",
-    "react-native-web": "~0.18.9",
-    "react-native-svg": "13.4.0"
+    "react-native-svg": "13.4.0",
+    "react-native-web": "~0.18.9"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",
