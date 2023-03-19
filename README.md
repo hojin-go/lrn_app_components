@@ -2,7 +2,7 @@
 
 react native base components
 
-## features
+## Features
 ✅ [Button](docs/Button.md)  
 
 ✅ Modal   
@@ -30,7 +30,7 @@ yarn add @lrn/lrn-app-components
 ```
 
 ## Usage
-
+见 `Features` 中的已完成组件链接文档。
 
 ## Contributing
 
