@@ -8,7 +8,6 @@
     "lrn": "lrn start --dev-client",
     "web": "expo start --web",
     "ios": "expo start --ios",
-    // 生成 expo 二维码可分享出去
     "deploy:qr": "eas update --platform=all --auto",
     "publish": "npm pack && npm publish",
     "bump:minor": "npm version minor",
