@@ -1,5 +1,5 @@
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
-import React, { useEffect } from 'react';
+import React, { useEffect, useMemo } from 'react';
 import BottomSheet from './BottomSheet';
 import Colors from '../Colors';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
@@ -19,6 +19,10 @@ type Props = {
 const ActionSheet = (props: Props) => {
   // use safearea inset
   const insets = useSafeAreaInsets();
+
+  const bottomInset = useMemo(() => {
+    return insets.bottom > 0 ? insets.bottom : 20;
+  }, [insets.bottom]);
 
   const [actions, setActions] = React.useState<ActionSheetAction[]>([]);
   const [cancelAction, setCancleAction] = React.useState<ActionSheetAction>();
@@ -45,10 +49,12 @@ const ActionSheet = (props: Props) => {
 
   return (
     <BottomSheet visible={props.visible} onClose={cancelAction?.onPress}>
-      <View style={[styles.container, { paddingBottom: insets.bottom }]}>
+      <View style={[styles.container, { paddingBottom: bottomInset }]}>
         <View style={styles.body}>
           {props.content && (
-            <Text style={[styles.content]}>{props.content}</Text>
+            <Text style={[styles.content]}>
+              {props.content + JSON.stringify(insets)}
+            </Text>
           )}
         </View>
         <View
@@ -102,7 +108,9 @@ const styles = StyleSheet.create({
   container: {
     width: '100%',
     backgroundColor: 'white',
-    borderRadius: 12,
+    // borderRadius: 12,
+    borderTopLeftRadius: 12,
+    borderTopRightRadius: 12,
   },
   body: {
     paddingHorizontal: 20,
