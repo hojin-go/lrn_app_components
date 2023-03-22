@@ -1,4 +1,11 @@
-import { StyleProp, StyleSheet, Text, TextStyle, View } from 'react-native';
+import {
+  Platform,
+  StyleProp,
+  StyleSheet,
+  Text,
+  TextStyle,
+  View,
+} from 'react-native';
 import React, { useMemo } from 'react';
 import Colors from './Colors';
 
@@ -18,13 +25,13 @@ const Price = (props: Props) => {
   const symbolStyle = (): StyleProp<TextStyle> => {
     switch (props.size) {
       case 'small':
-        return { fontSize: 12, lineHeight: 16 };
+        return { fontSize: 12, lineHeight: Platform.OS === 'ios' ? 16 : 20 };
       case 'medium':
-        return { fontSize: 14, lineHeight: 20 };
+        return { fontSize: 14, lineHeight: Platform.OS === 'ios' ? 20 : 24 };
       case 'large':
-        return { fontSize: 16, lineHeight: 24 };
+        return { fontSize: 16, lineHeight: Platform.OS === 'ios' ? 25 : 28 };
       case 'xlarge':
-        return { fontSize: 20, lineHeight: 31 };
+        return { fontSize: 20, lineHeight: Platform.OS === 'ios' ? 31 : 34 };
     }
   };
   const valueStyle = (): StyleProp<TextStyle> => {
@@ -56,18 +63,18 @@ const Price = (props: Props) => {
   const unitStyle = (): StyleProp<TextStyle> => {
     switch (props.size) {
       case 'small':
-        return { fontSize: 11, lineHeight: 18 };
+        return { fontSize: 11, lineHeight: Platform.OS === 'ios' ? 18 : 20 };
       case 'medium':
-        return { fontSize: 11, lineHeight: 20 };
+        return { fontSize: 11, lineHeight: Platform.OS === 'ios' ? 20 : 22 };
       case 'large':
-        return { fontSize: 12, lineHeight: 24 };
+        return { fontSize: 12, lineHeight: Platform.OS === 'ios' ? 24 : 25 };
       case 'xlarge':
-        return { fontSize: 12, lineHeight: 28 };
+        return { fontSize: 12, lineHeight: Platform.OS === 'ios' ? 28 : 30 };
     }
   };
 
   const fontFamily = 'DIN Alternate';
-  const bold = '700';
+  // const bold = '700';
 
   const value = useMemo(() => {
     let num = 0;
@@ -93,27 +100,25 @@ const Price = (props: Props) => {
 
   return (
     <View style={styles.container}>
-      <Text>
-        {props.symbol && (
-          <Text
-            style={[
-              symbolStyle(),
-              {
-                fontWeight: bold,
-                color: props.color ?? Colors.amount,
-                fontFamily: fontFamily,
-              },
-            ]}
-          >
-            {props.symbol}
-          </Text>
-        )}
-      </Text>
+      {props.symbol && (
+        <Text
+          style={[
+            symbolStyle(),
+            {
+              // fontWeight: bold,
+              color: props.color ?? Colors.amount,
+              fontFamily: fontFamily,
+            },
+          ]}
+        >
+          {props.symbol}
+        </Text>
+      )}
       <Text
         style={[
           valueStyle(),
           {
-            fontWeight: bold,
+            // fontWeight: bold,
             color: props.color ?? Colors.amount,
             fontFamily: fontFamily,
           },

@@ -17,6 +17,8 @@ import ScrollPickerScreen from './ScrollPickerScreen';
 import UnrelatedColumnPickerScreen from './UnrelatedColumnPickerScreen';
 import CascadeColumnPickerScreen from './CascadeColumnPickerScreen';
 import PriceScreen from './PriceScreen';
+import { useFonts } from 'expo-font';
+import FontScreen from './FontScreen';
 
 const StackData = [
   { name: 'Modal', desc: '模态组件', component: ModalScreen },
@@ -37,6 +39,7 @@ const StackData = [
     component: CascadeColumnPickerScreen,
   },
   { name: 'Price', desc: '价格组件', component: PriceScreen },
+  { name: 'Font', desc: '字体', component: FontScreen },
 ];
 
 type Props = {
@@ -68,6 +71,14 @@ const HomeScreen = ({ navigation }: Props) => {
 const Stack = createNativeStackNavigator();
 
 export default function App() {
+  const [fontsLoaded] = useFonts({
+    'DIN Alternate': require('../assets/DINAlternate-Bold.ttf'),
+  });
+
+  if (!fontsLoaded) {
+    return null;
+  }
+
   return (
     <ToastProvider placement="bottom" offsetBottom={200} duration={2000}>
       <NavigationContainer>
