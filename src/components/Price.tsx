@@ -73,7 +73,7 @@ const Price = (props: Props) => {
     }
   };
 
-  const fontFamily = 'DIN Alternate';
+  const fontFamily = 'DINAlternate-Bold';
   // const bold = '700';
 
   const value = useMemo(() => {

@@ -72,7 +72,7 @@ const Stack = createNativeStackNavigator();
 
 export default function App() {
   const [fontsLoaded] = useFonts({
-    'DIN Alternate': require('../assets/DINAlternate-Bold.ttf'),
+    'DINAlternate-Bold': require('../assets/DINAlternate-Bold.ttf'),
   });
 
   if (!fontsLoaded) {

@@ -19,7 +19,7 @@ const FontScreen = () => {
 
   return (
     <View style={styles.container}>
-      <Text style={{ fontFamily: 'DIN Alternate', fontSize: 30 }}>
+      <Text style={{ fontFamily: 'DINAlternate-Bold', fontSize: 30 }}>
         1234567890
       </Text>
       <Text style={{ fontSize: 30 }}>Platform Default 1234</Text>
