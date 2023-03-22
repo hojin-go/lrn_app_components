@@ -20,10 +20,6 @@ const ActionSheet = (props: Props) => {
   // use safearea inset
   const insets = useSafeAreaInsets();
 
-  const bottomInset = useMemo(() => {
-    return insets.bottom > 0 ? insets.bottom : 20;
-  }, [insets.bottom]);
-
   const [actions, setActions] = React.useState<ActionSheetAction[]>([]);
   const [cancelAction, setCancleAction] = React.useState<ActionSheetAction>();
 
@@ -49,12 +45,10 @@ const ActionSheet = (props: Props) => {
 
   return (
     <BottomSheet visible={props.visible} onClose={cancelAction?.onPress}>
-      <View style={[styles.container, { paddingBottom: bottomInset }]}>
+      <View style={[styles.container, { paddingBottom: insets.bottom }]}>
         <View style={styles.body}>
           {props.content && (
-            <Text style={[styles.content]}>
-              {props.content + JSON.stringify(insets)}
-            </Text>
+            <Text style={[styles.content]}>{props.content}</Text>
           )}
         </View>
         <View
