@@ -23,4 +23,6 @@
 ## 使用自定义字体
 字体文件可在 `example/assets/DINAlternate-Bold.ttf` 中找到
 
-参考：[https://docs.expo.dev/guides/using-custom-fonts/](https://docs.expo.dev/guides/using-custom-fonts/)
+参考：
+1. [https://docs.expo.dev/guides/using-custom-fonts/](https://docs.expo.dev/guides/using-custom-fonts/)
+2. [https://lanehubcn.feishu.cn/wiki/wikcnXynZxKC1HNpCRyJ4jsnTpe](https://lanehubcn.feishu.cn/wiki/wikcnXynZxKC1HNpCRyJ4jsnTpe)
