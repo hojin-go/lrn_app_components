@@ -1,5 +1,5 @@
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
-import React, { useEffect, useMemo } from 'react';
+import React, { useEffect } from 'react';
 import BottomSheet from './BottomSheet';
 import Colors from '../Colors';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
