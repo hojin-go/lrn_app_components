@@ -31,7 +31,12 @@ const Dialog: FC<Props> = (props: Props) => {
   } = props;
 
   return (
-    <Modal visible={visible} animationType="fade" onRequestClose={onClose}>
+    <Modal
+      visible={visible}
+      transparent
+      animationType="fade"
+      onRequestClose={onClose}
+    >
       <View style={styles.container}>
         {avoidKeyboard ? (
           <KeyboardAvoidingView
