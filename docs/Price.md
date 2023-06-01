@@ -2,8 +2,8 @@
 
 ## 截图效果
 
-![](https://codeup.aliyun.com/61a498ef216a665eb18b936e/lanehub-frontend/lrn-app-components/raw/main/docs%2Fimages%2Fprice.png)
-![](https://codeup.aliyun.com/61a498ef216a665eb18b936e/lanehub-frontend/lrn-app-components/raw/main/docs%2Fimages%2Fprice-android.jpg)
+![](./images/price.png)
+![](./images/price-android.jpg)
 
 ## 特性
 1. value 可以传入 number 或 string，但需可以转换为 number
