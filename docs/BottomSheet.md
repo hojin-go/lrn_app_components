@@ -2,7 +2,7 @@
 
 ## Screen shots
 
-![](https://codeup.aliyun.com/61a498ef216a665eb18b936e/lanehub-frontend/lrn-app-components/raw/main/docs%2Fimages%2F20230317-220250.gif)
+![](./images/20230317-220250.gif)
 
 ## Usage
 
